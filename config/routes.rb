@@ -10,6 +10,14 @@ Rails.application.routes.draw do
   get 'tweets/show'
   get 'tweets/new'
   post 'tweets' => 'tweets#create'
+  # follow
+  resources :users do
+    member do
+     get :following, :followers
+    end
+  end
+  resources :relationships, only: [:create, :destroy]
   # Teamroom
   get 'rooms/show'
+
 end
