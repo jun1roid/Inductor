@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'users/show'
   get 'users/show/:username' => 'users#show'
   # Tweet
-  get 'tweets/index'
+  get 'home' => 'tweets#index'
   get 'tweets/show'
   get 'tweets/new'
   post 'tweets' => 'tweets#create'
