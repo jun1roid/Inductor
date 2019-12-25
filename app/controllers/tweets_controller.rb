@@ -13,7 +13,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new
         @tweet.content = params[:tweet][:content]
         @tweet.save
-        redirect_to tweets_index_path
+        redirect_to home_path
   end
 
 end
