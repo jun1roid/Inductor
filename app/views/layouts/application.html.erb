@@ -12,7 +12,33 @@
   <body>
     <header>
       <nav class = "navbar navbar-dark bg-danger">
+        <h1 class = "title">Inductor</h1>
+
+      </nav>
     </header>
-    <%= yield %>
+    <div class = "container-fluid">
+      <div class = "row">
+        <div class = "col-md-4">
+        <% if user_signed_in? %>
+          <div class="navbar navbar-sidebar">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <%= link_to " Home", home_path, class:"" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to " Explore", users_path %>
+              </li>
+              <li class = "nav-item">
+                <%= link_to " Profile", user_path(current_user.id) %>
+              </li>
+            </ul>
+          </div>
+          <% end %>
+        </div>
+        <div class = "col-md-8">
+        <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

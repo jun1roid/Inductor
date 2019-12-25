@@ -4,7 +4,6 @@
   <p><a href="/users/<%= u.id %>"><%= u.name %></a></p>
   <hr>
   <% end %>
-  <%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
 <% else %>
   <%= link_to "ユーザーを登録する", new_user_registration_path %>
   <br>

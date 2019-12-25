@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   resources :users, :only => [:index, :show]
   resources :messages, :only => [:create]
   resources :rooms, :only => [:create, :show, :index]
-  get 'users/index'
-  get 'users/show'
   # get 'users/:username' => 'users#show'
   # Tweet
   get 'home' => 'tweets#index'
