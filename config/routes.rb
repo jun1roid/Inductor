@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # User
   devise_for :users
+  resources :users, :only => [:index, :show]
+  resources :messages, :only => [:create]
+  resources :rooms, :only => [:create, :show, :index]
   get 'users/index'
   get 'users/show'
-  get 'users/show/:username' => 'users#show'
+  # get 'users/:username' => 'users#show'
   # Tweet
   get 'home' => 'tweets#index'
   get 'tweets/show'
