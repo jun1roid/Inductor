@@ -26,6 +26,13 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+  end
   def following
     @user  = User.find(params[:id])
     @users = @user.followings
