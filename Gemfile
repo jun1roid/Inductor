@@ -66,3 +66,6 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'devise'
 gem 'carrierwave'
+group :production do
+  gem 'mysql2'
+end
