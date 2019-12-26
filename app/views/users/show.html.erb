@@ -4,6 +4,7 @@
   </p>
   <h1><%= @user[:name] %></h1>
   <p>@<%= @user[:username] %></p>
+  <%= link_to "Edit", edit_user_path(current_user.id), class:"btn btn-success" %>
   <ul>
       <li>Location : <%= @user[:location] %></li>
       <li>About   : <%= @user[:about] %></li>
