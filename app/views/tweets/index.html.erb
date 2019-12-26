@@ -1,12 +1,16 @@
 <% if user_signed_in? %>
 <div class = "container">
   <%= form_for Tweet.new do |f| %>
-    <%= f.text_area :content %>
+  <div class = "col-xs-4">
+    <%= f.text_area :content, class:"form-control" %>
+  </div>
+  <div class = "row">
     <%= f.file_field :video %>
-    <%= f.submit 'ツイートする', class:"btn btn-primary col-xs-12" %>
+    <%= f.submit 'ツイート', class:"btn btn-primary" %>
+  </div>
   <% end %>
   <% @tweets.each do |tweet| %>
-    <p><%= video_tag tweet.video_url.to_s,loop: true, controls: true, width: 550, id: "mv"%></p>
+    <p><%= video_tag tweet.video_url.to_s,loop: true, controls: true, width: 100, id: "mv"%></p>
     <p><%= tweet.content %></p>
   <% end %>
 </div>
