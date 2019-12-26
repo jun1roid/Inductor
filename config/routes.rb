@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :rooms, :only => [:create, :show, :index]
   # get 'users/:username' => 'users#show'
   # Tweet
-  get 'home' => 'tweets#index'
+  root to: 'tweets#index'
   get 'tweets/show'
   get 'tweets/new'
   post 'tweets' => 'tweets#create'

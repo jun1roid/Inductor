@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_25_102605) do
+ActiveRecord::Schema.define(version: 2019_12_26_023543) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "tweet_id"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "entries", force: :cascade do |t|
     t.integer "user_id"
@@ -52,6 +60,8 @@ ActiveRecord::Schema.define(version: 2019_12_25_102605) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "tweet_image_id"
+    t.integer "user_id"
+    t.string "video"
   end
 
   create_table "users", force: :cascade do |t|

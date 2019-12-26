@@ -31,3 +31,27 @@
 .inductor_title {
 	color: #fff;
 }
+.row1{
+	height: 550px;
+	background-image: url("fredrick-tendong-HVYepJYeHdQ-unsplash.jpg");
+	background-size: cover;
+	opacity: 1.0;
+
+	.col-md-12{
+		height: 550px;
+
+		h1{
+			padding-top: 40px;
+			color: rgb(247, 91, 1);
+			text-align: center;
+			line-height: 60px;
+
+			strong{
+				font-size: 60px;
+			}
+		}
+		p{
+			text-align: center;
+		}
+	}
+}
