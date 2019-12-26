@@ -1,19 +1,22 @@
 <% if user_signed_in? %>
-<div class = "container">
-  <%= form_for Tweet.new do |f| %>
-  <div class = "col-xs-4">
-    <%= f.text_area :content, class:"form-control" %>
+<div class = "col-md-4">
+  <h2>ゲーム募しよう！</h2>
+  <div class = "jumbotron mt-4">
+    <%= form_for Tweet.new do |f| %>
+      <%= f.text_area :content, class:"form-control" %>
+      <%= f.submit '募集する', class:"btn btn-primary bosyu" %>
+    <% end %>
   </div>
-  <div class = "row">
-    <%= f.file_field :video %>
-    <%= f.submit 'ツイート', class:"btn btn-primary" %>
-  </div>
-  <% end %>
   <% @tweets.each do |tweet| %>
-    <p><%= video_tag tweet.video_url.to_s,loop: true, controls: true, width: 100, id: "mv"%></p>
-    <p><%= tweet.content %></p>
+    <div class ="jumbotron mt-4">
+      <p><%= tweet.created_at.strftime('%Y/%m/%d') %></p>
+      
+      <p><%= tweet.content %></p>
+    </div>
   <% end %>
+
 </div>
+
 <% else %>
     <div class ="container home">
       <div class="row1">
