@@ -8,7 +8,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <% if user_signed_in? %>
   <body>
+  <% else %>
+  <body class = "dark-body">
+  <% end %>
     <header>
       <nav class = "navbar navbar-dark bg-danger">
         <h1 class = "inductor_title">Inductor</h1>
