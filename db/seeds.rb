@@ -8,18 +8,18 @@
 User.create!(
     [
       {
-        name: "Soushi Yamamoto",
-        username: "soushiy",
+        name: "Test1",
+        username: "testkun",
         location: "Tokyo",
-        about: "私はそうしです。",
+        about: "PCゲーマーです。",
         email: "test@gmail.com",
         password:  "111111"
       },
       {
-        name: "Taro Tanaka",
-        username: "taro",
-        location: "Tokyo",
-        about: "私はタロウです。",
+        name: "Test2",
+        username: "test2kun",
+        location: "Osaka",
+        about: "CSゲーマーです。",
         email: "test2@gmail.com",
         password:  "111111"
       }

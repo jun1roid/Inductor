@@ -1,26 +1,32 @@
-<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
-<h1><%= @user[:name] %></h1>
-<p>@<%= @user[:username] %></p>
-<ul>
-    <li>Location : <%= @user[:location] %></li>
-    <li>About   : <%= @user[:about] %></li>
-</ul>
-<%= render 'follow_form' %>
-<%= render 'stats' %>
+<div class ="col-md-8">
+  <p>
+  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+  </p>
+  <h1><%= @user[:name] %></h1>
+  <p>@<%= @user[:username] %></p>
+  <ul>
+      <li>Location : <%= @user[:location] %></li>
+      <li>About   : <%= @user[:about] %></li>
+  </ul>
+  <p>
+    <%= render 'follow_form' %>
+    <%= render 'stats' %>
+  </p>
 
-<% if @user.id == current_user.id %>
+  <% if @user.id == current_user.id %>
 
-<% else %>
-  <% if @isRoom == true %>
-    <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
   <% else %>
-    <%= form_for @room do |f| %>
-      <%= fields_for @entry do |e| %>
-        <%= e.hidden_field :user_id, :value=> @user.id %>
+    <% if @isRoom == true %>
+      <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
+    <% else %>
+      <%= form_for @room do |f| %>
+        <%= fields_for @entry do |e| %>
+          <%= e.hidden_field :user_id, :value=> @user.id %>
+        <% end %>
+        <%= f.submit "チャットを始める" %>
       <% end %>
-      <%= f.submit "チャットを始める" %>
     <% end %>
   <% end %>
-<% end %>
 
-<%= link_to "ユーザー一覧に戻る", users_path %>
+  <%= link_to "募集一覧に戻る", root_path, class:"btn btn-default" %>
+</div>
