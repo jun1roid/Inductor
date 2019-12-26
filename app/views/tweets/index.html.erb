@@ -1,0 +1,28 @@
+<% if user_signed_in? %>
+<div class = "container">
+  <%= form_for Tweet.new do |f| %>
+  <div class = "col-xs-4">
+    <%= f.text_area :content, class:"form-control" %>
+  </div>
+  <div class = "row">
+    <%= f.file_field :video %>
+    <%= f.submit 'ツイート', class:"btn btn-primary" %>
+  </div>
+  <% end %>
+  <% @tweets.each do |tweet| %>
+    <p><%= video_tag tweet.video_url.to_s,loop: true, controls: true, width: 100, id: "mv"%></p>
+    <p><%= tweet.content %></p>
+  <% end %>
+</div>
+<% else %>
+      <div class="row1">
+			  <div class="col-md-12">
+            <h1>最高の仲間を探そう。</h1>
+          <p>
+            <%= link_to "ログイン", new_user_session_path, class:"btn btn-info" %>
+          
+            <%= link_to "新規登録", new_user_registration_path, class:"btn btn-success" %>
+          </p>
+          </div>
+      </div>
+<% end %>
