@@ -2,9 +2,10 @@
   <p>
   <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
   </p>
-  <h1><%= @user[:name] %></h1>
+  <p>
+    <h1><%= @user[:name] %><span class = "edituser"><%= link_to "Edit", edit_user_path(current_user.id), class:"btn btn-success" %></span></h1>
+  </p>
   <p>@<%= @user[:username] %></p>
-  <%= link_to "Edit", edit_user_path(current_user.id), class:"btn btn-success" %>
   <ul>
       <li>Location : <%= @user[:location] %></li>
       <li>About   : <%= @user[:about] %></li>
