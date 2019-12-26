@@ -8,9 +8,10 @@
     <% end %>
   </div>
   <% @tweets.each do |tweet| %>
-    <div class ="jumbotron mt-4">
+    <div class ="jumbotron mt-2">
       <p><%= tweet.created_at.strftime('%Y/%m/%d') %></p>
-      
+      <p><%= attachment_image_tag tweet.user, :profile_image, format: 'jpeg', class:"attachment user profile_image", fallback: "no_image.jpg", size:"40x40" %>
+      </p>
       <p><%= tweet.content %></p>
     </div>
   <% end %>
