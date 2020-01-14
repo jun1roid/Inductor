@@ -66,6 +66,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'devise'
 gem 'carrierwave'
+gem 'pry-byebug'
 group :production do
   gem 'mysql2'
 end

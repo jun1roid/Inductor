@@ -5,12 +5,9 @@ Rails.application.routes.draw do
   resources :users, :only => [:index, :show, :update]
   resources :messages, :only => [:create]
   resources :rooms, :only => [:create, :show, :index]
-  # get 'users/:username' => 'users#show'
   # Tweet
   root to: 'tweets#index'
-  get 'tweets/show'
-  get 'tweets/new'
-  post 'tweets' => 'tweets#create'
+  resources :tweets
   # follow
   resources :users do
     member do

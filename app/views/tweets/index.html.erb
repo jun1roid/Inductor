@@ -2,7 +2,7 @@
 <div class = "col-md-4">
   <h2>ゲーム募集しよう！</h2>
   <div class = "jumbotron mt-4">
-    <%= form_for Tweet.new do |f| %>
+    <%= form_for @tweet do |f| %>
       <%= f.text_area :content, class:"form-control" %>
       <%= f.submit '募集する', class:"btn btn-primary bosyu" %>
     <% end %>
