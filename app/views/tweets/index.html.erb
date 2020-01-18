@@ -16,6 +16,7 @@
       <p><%= tweet.content %></p>
     </div>
   <% end %>
+  <%= paginate @tweets, class: "paginate" %>
 
 </div>
 

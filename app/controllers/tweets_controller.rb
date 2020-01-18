@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
   def index
     @tweet = Tweet.new
-    @tweets = Tweet.all
+    @tweets = Tweet.page(params[:page]).reverse_order
   end
 
   def show
