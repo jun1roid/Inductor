@@ -4,6 +4,7 @@
   <div class = "jumbotron mt-4">
     <%= form_for @tweet do |f| %>
       <%= f.text_area :content, class:"form-control" %>
+      <%= f.hidden_field :user_id, value:current_user.id %>
       <%= f.submit '募集する', class:"btn btn-primary bosyu" %>
     <% end %>
   </div>
@@ -11,6 +12,7 @@
     <div class ="jumbotron mt-2">
       <p><%= tweet.created_at.strftime('%Y/%m/%d') %></p>
       <p><%= attachment_image_tag tweet.user, :profile_image, format: 'jpeg', class:"attachment user profile_image", fallback: "no_image.jpg", size:"40x40" %>
+      <%= link_to tweet.user.name, user_path(tweet.user) %></p>
       <p><%= tweet.content %></p>
     </div>
   <% end %>
