@@ -8,11 +8,18 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <% if user_signed_in? %>
   <body>
+  <% else %>
+  <body class = "dark-body">
+  <% end %>
     <header>
       <nav class = "navbar navbar-dark bg-danger">
         <h1 class = "inductor_title">Inductor</h1>
         <div class = "space" style = "height: 30px;"></div>
+        <% if user_signed_in? %>
+        <%= link_to " ログアウト", destroy_user_session_path, method: :delete, class:"btn btn-light" %>
+        <% end %>
       </nav>
     </header>
     <div class = "space" style = "height: 40px;"></div>
@@ -35,9 +42,7 @@
           </div>
         <% end %>
         </div>
-        <div class = "col-md-8">
         <%= yield %>
-        </div>
       </div>
     </div>
   </body>

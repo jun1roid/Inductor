@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
+  has_many :tweets, dependent: :destroy
   attachment :profile_image
   has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship", dependent: :destroy
 

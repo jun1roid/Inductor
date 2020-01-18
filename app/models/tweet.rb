@@ -1,3 +1,4 @@
 class Tweet < ApplicationRecord
-    mount_uploader :video, VideoUploader
+    belongs_to :user, optional: true
+    # mount_uploader :video, VideoUploader
 end
