@@ -11,10 +11,11 @@ Rails.application.routes.draw do
   # follow
   resources :users do
     member do
-     get :following, :followers
+     get :following, :followers, :user_tweets
     end
   end
   resources :relationships, only: [:create, :destroy]
+  get "following_tweets" => "tweets#following_tweets"
   # Teamroom
   get 'rooms/show'
 

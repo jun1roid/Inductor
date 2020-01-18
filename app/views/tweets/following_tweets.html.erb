@@ -1,0 +1,22 @@
+<div class = "col-md-4">
+  <h2>フォロー中の募集一覧</h2>
+    <div class = "jumbotron mt-4">
+      <%= form_for @tweet do |f| %>
+        <%= f.text_area :content, class:"form-control" %>
+        <%= f.hidden_field :user_id, value:current_user.id %>
+        <%= f.submit '募集する', class:"btn btn-primary bosyu" %>
+      <% end %>
+    </div>
+  <% @users.each do |user| %>
+    <% @tweets = Tweet.where(user_id: user.id).limit(1).order("created_at DESC") %>
+      <% @tweets.each do |tweet| %>
+        <div class ="jumbotron mt-2">
+        <p><%= tweet.created_at.strftime('%Y/%m/%d') %></p>
+        <p><%= attachment_image_tag tweet.user, :profile_image, format: 'jpeg', class:"attachment user profile_image", fallback: "no_image.jpg", size:"40x40" %>
+        <%= link_to tweet.user.name, user_path(tweet.user) %></p>
+        <p><%= tweet.content %></p>
+      </div>
+      <% end %>
+  <% end %>
+    <%= paginate(@users) %>
+</div>

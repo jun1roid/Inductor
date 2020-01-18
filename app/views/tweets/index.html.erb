@@ -17,6 +17,7 @@
     </div>
   <% end %>
   <%= paginate @tweets, class: "paginate" %>
+  <%= link_to 'フォロー中のツイート一覧へ', following_tweets_path, {class: 'btn btn-primary withripple' }%>
 
 </div>
 
