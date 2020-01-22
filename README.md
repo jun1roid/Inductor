@@ -1,24 +1,16 @@
-# README
+# アプリケーション名"Inductor"
+  電流によって形成される磁場(インダクター)と電子競技(eスポーツ)によって人々が集まる場所、どちらも同じ電気で生み出される場所という意味で名付けました。
+  
+# 概要
+  このサイトでは、eスポーツ(ゲーム)仲間を募集することができます。現在日本ではeスポーツへの理解がまだまだ浅く、家族や友達、職場の同僚などからeスポーツ仲間を探し出すことが非常に困難となっています。作成者は、とあるeスポーツで日本一になったことがあります。ソロプレイヤー(一人でオンラインゲームをしている人)たちの声を実際に聞いて作成しました。
+  いいね機能やコメント機能をなくすことで、募集が来なかった時も、がっかりした気持ちになることを無くしました。ゲーム仲間募集限定の投稿によって、他のSNSでは埋もれてしまうゲーム募集が見逃しにくくなります。また、募集した人と個別にチャットすることで、募集への参加をしやすくしてあります。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 詳細
+  ・募集投稿機能
+  ・個別チャット機能
+  ・ユーザーへのフォロー機能(ゲーム仲間募集をフォローしたユーザーに絞ることができます)
+  ・ユーザーの一覧機能
+  ・プロフィール機能(プロフィール画像の設定が可能です)
+ 
+#開発環境
+  Ruby　2.5.5、　Rails 5.2.4
