@@ -67,7 +67,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'pry-byebug'
-gem 'kaminari','~> 1.1.1'
+gem 'kaminari','~> 1.2.1'
 group :production do
   gem 'mysql2'
 end
